@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-4">
+        <h4>Templete Driven Form</h4>
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <div class="mb-3">
+              <label for="name" class="form-label">Mentor Name</label>
+              <input type="text" class="form-control" id="name" name="name" ngModel>
+            </div>
+            <div class="mb-3">
+              <label for="likecount" class="form-label">Like Count</label>
+              <input type="number" class="form-control" id="likeCount" name="likeCount" ngModel>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <br>
+        <h4 *ngIf="mentor"> {{ mentor.name }}</h4>
+    </div>
+    <div class="col-2">
+
+    </div>
+    <div class="col-4">
+        <h4>Reactive Form</h4>
+        <form [formGroup]="mentorForm" (ngSubmit)="onSubmitReactive()">
+            <div class="mb-3">
+              <label for="name" class="form-label">Mentor Name</label>
+              <input type="text" class="form-control" id="name" formControlName="name">
+            </div>
+            <div class="mb-3">
+              <label for="likeCount" class="form-label">Like Count</label>
+              <input type="number" class="form-control" id="likeCount" formControlName="likeCount">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <br>
+        <h4 *ngIf="selectedMentor"> {{ selectedMentor.name }}</h4>
+
+    </div>
+</div>
+
