@@ -9,6 +9,8 @@ import { ParentComponent } from './crossComponent/parent/parent.component';
 import { ChildComponent } from './crossComponent/child/child.component';
 import { AngularFormsComponent } from './angular-forms/angular-forms.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ServicesComponent } from './services/services.component';
+import { NonRelatedComponent } from './services/non-related/non-related.component';
 
 
 const routes: Routes = [ 
@@ -17,6 +19,8 @@ const routes: Routes = [
   {path: 'directives', component: DirectivesComponent},
   {path: 'xcross', component: ParentComponent},
   {path: 'form', component: AngularFormsComponent},
+  {path: 'services', component: NonRelatedComponent},
+  {path: 'servicesx', component: ServicesComponent},
   {path: '', pathMatch: 'full', component: BindingExamplesComponent}
 
 ]
@@ -28,7 +32,9 @@ const routes: Routes = [
     DirectivesComponent,
     ParentComponent,
     ChildComponent,
-    AngularFormsComponent
+    AngularFormsComponent,
+    ServicesComponent,
+    NonRelatedComponent
   ],
   imports: [
     BrowserModule,
