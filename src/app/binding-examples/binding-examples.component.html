@@ -1,0 +1,14 @@
+
+<!-- String Interpolation -->
+<h2 [ngStyle]="{'color': isDisabled ? 'red' : 'green'}"> {{ example }} </h2>
+<br>
+<!-- Event Binding -->
+<!-- Property Binding -->
+<button class="btn btn-primary" 
+        (click)="onClick()" 
+        [disabled]="isDisabled"
+        [ngClass]="{'btn-lg': !isDisabled}"
+        
+>Click Me</button>
+
+
