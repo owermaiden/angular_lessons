@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IMentor } from './imentor';
 import { Mentor } from './mentor';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +15,7 @@ export class MentorService {
 
   selectedMentor?: IMentor;
   selectedMentor$: Subject<IMentor> = new Subject();
+  selectedMentorB$: BehaviorSubject<IMentor> = new BehaviorSubject<IMentor>(this.mentors[0]);
 
   constructor() { }
 
@@ -29,8 +30,7 @@ export class MentorService {
 
   selectMentorReactive(name : string){
     const selected = this.getMentorByName(name);
-    this.selectedMentor$.next(selected);
-    
+    this.selectedMentorB$.next(selected);
   }
 
   selectMentor(name : string){

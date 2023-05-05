@@ -17,7 +17,7 @@ export class ReactiveComponent implements OnInit{
   ngOnInit(): void {
       // this.selectedMentor = this.service.selectedMentor;
       this.mentors = this.service.getMentors();
-      this.service.selectedMentor$.subscribe(
+      this.service.selectedMentorB$.subscribe(
         res => this.selectedMentor = res
       );
   }
