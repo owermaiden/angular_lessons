@@ -12,6 +12,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NonRelatedComponent } from './interComponent/non-related/non-related.component';
 import { ReactiveComponent } from './reactive/reactive.component';
 import { InterComponent } from './interComponent/inter.component';
+import { TypescriptComponent } from './typescript/typescript/typescript.component';
 
 
 const routes: Routes = [ 
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'inter', component: NonRelatedComponent},
   {path: 'interx', component: InterComponent},
   {path: 'reactive', component: ReactiveComponent},
+  {path: 'typescript', component: TypescriptComponent},
   {path: '', pathMatch: 'full', component: BindingExamplesComponent}
 
 ]
@@ -37,7 +39,8 @@ const routes: Routes = [
     AngularFormsComponent,
     InterComponent,
     NonRelatedComponent,
-    ReactiveComponent
+    ReactiveComponent,
+    TypescriptComponent
   ],
   imports: [
     BrowserModule,
