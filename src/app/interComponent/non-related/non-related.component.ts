@@ -19,6 +19,6 @@ export class NonRelatedComponent {
 
   onSelectMentor(mentor: string){
     this.service.selectMentor(mentor);
-    this.router.navigate(['/servicesx']);
+    this.router.navigate(['/interx']);
   }
 }

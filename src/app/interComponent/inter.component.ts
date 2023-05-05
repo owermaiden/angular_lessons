@@ -3,11 +3,11 @@ import { IMentor } from '../shared/imentor';
 import { MentorService } from '../shared/mentor.service';
 
 @Component({
-  selector: 'app-services',
-  templateUrl: './services.component.html',
-  styleUrls: ['./services.component.css']
+  selector: 'app-inter',
+  templateUrl: './inter.component.html',
+  styleUrls: ['./inter.component.css']
 })
-export class ServicesComponent implements OnInit{
+export class InterComponent implements OnInit{
   selectedMentor: IMentor | undefined;
 
   constructor(private mentorService: MentorService){}
