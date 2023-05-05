@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { IMentor } from './imentor';
 import { Mentor } from './mentor';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject, Subject, catchError, map, throwError } from 'rxjs';
+import { HttpClient } from '@angular/common/http'
 
 @Injectable({
   providedIn: 'root'
@@ -17,9 +18,10 @@ export class MentorService {
   selectedMentor$: Subject<IMentor> = new Subject();
   selectedMentorB$: BehaviorSubject<IMentor> = new BehaviorSubject<IMentor>(this.mentors[0]);
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getMentors(): Mentor[]{
+    // this.fetchMentors();
     return this.mentors.slice();
   }
 
@@ -42,7 +44,37 @@ export class MentorService {
     this.mentors[index].likeCount += 1;
   }
 
+  // fetchMentors(){
+  //   let url : string = 'http://localhost:8080/api/v1/mentors';
 
+  //   this.http.get<Response>(url).pipe(
+  //     map( response => response.data ),
+  //     catchError(error => this.handleError(error))
+  //   ).subscribe(
+  //       data => {
+  //         this.mentors = data;
+  //         console.log(data);
+  //       }
+  //   );
+  // }
 
+  // handleError(error:any) {
+  //   let errorMessage = '';
+  //   if (error.error instanceof ErrorEvent) {
+  //     // client-side error
+  //     errorMessage = `Error: ${error.error.message}`;
+  //   } else {
+  //     // server-side error
+  //     errorMessage = error.error.message;
+  //   }
+  //   console.log(errorMessage);
+  //   return throwError(() => {
+  //       return errorMessage;
+  //   });
+  // }
 
 }
+
+// interface Response {
+//   data: [];
+// }

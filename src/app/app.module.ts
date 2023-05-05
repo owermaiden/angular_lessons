@@ -13,6 +13,7 @@ import { NonRelatedComponent } from './interComponent/non-related/non-related.co
 import { ReactiveComponent } from './reactive/reactive.component';
 import { InterComponent } from './interComponent/inter.component';
 import { TypescriptComponent } from './typescript/typescript/typescript.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const routes: Routes = [ 
@@ -45,6 +46,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
