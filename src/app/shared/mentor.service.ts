@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IMentor } from './imentor';
 import { Mentor } from './mentor';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ export class MentorService {
   ];
 
   selectedMentor?: IMentor;
+  selectedMentor$: Subject<IMentor> = new Subject();
 
   constructor() { }
 
@@ -26,7 +28,15 @@ export class MentorService {
   }
 
   selectMentor(name : string){
-    this.selectedMentor = this.getMentorByName(name);
+    // this.selectedMentor = this.getMentorByName(name);
+    const selected = this.getMentorByName(name);
+    this.selectedMentor$.next(selected);
+    
+  }
+
+  likeMentor(mentor: IMentor){
+    let index: number = this.mentors.findIndex(m => m.name === mentor.name);
+    this.mentors[index].likeCount += 1;
   }
 
 
