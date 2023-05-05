@@ -11,6 +11,7 @@ import { AngularFormsComponent } from './angular-forms/angular-forms.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ServicesComponent } from './services/services.component';
 import { NonRelatedComponent } from './services/non-related/non-related.component';
+import { ReactiveComponent } from './reactive/reactive.component';
 
 
 const routes: Routes = [ 
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'form', component: AngularFormsComponent},
   {path: 'services', component: NonRelatedComponent},
   {path: 'servicesx', component: ServicesComponent},
+  {path: 'reactive', component: ReactiveComponent},
   {path: '', pathMatch: 'full', component: BindingExamplesComponent}
 
 ]
@@ -34,7 +36,8 @@ const routes: Routes = [
     ChildComponent,
     AngularFormsComponent,
     ServicesComponent,
-    NonRelatedComponent
+    NonRelatedComponent,
+    ReactiveComponent
   ],
   imports: [
     BrowserModule,
