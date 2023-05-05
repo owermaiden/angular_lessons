@@ -1,6 +1,8 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { IMentor } from 'src/app/shared/imentor';
+import { Mentor } from 'src/app/shared/mentor';
 
 @Component({
   selector: 'app-typescript',
@@ -138,3 +140,9 @@ class Employee {
 let emp = new Employee();
 emp.empCode = '123';
 emp.empName = "Swati";
+
+// Object from a Class
+let mentor: Mentor = new Mentor('Ower', 1);
+
+// JavaScript Object Notation (JSON)
+let mentor2 : IMentor = { name: 'Ower', likeCount: 1 };
