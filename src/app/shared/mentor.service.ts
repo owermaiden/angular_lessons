@@ -27,11 +27,14 @@ export class MentorService {
     return this.mentors[index];
   }
 
-  selectMentor(name : string){
-    // this.selectedMentor = this.getMentorByName(name);
+  selectMentorReactive(name : string){
     const selected = this.getMentorByName(name);
     this.selectedMentor$.next(selected);
     
+  }
+
+  selectMentor(name : string){
+    this.selectedMentor = this.getMentorByName(name);
   }
 
   likeMentor(mentor: IMentor){

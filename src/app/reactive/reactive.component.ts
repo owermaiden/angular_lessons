@@ -24,7 +24,7 @@ export class ReactiveComponent implements OnInit{
 
 
   onSelectMentor(mentor: string){
-    this.service.selectMentor(mentor);
+    this.service.selectMentorReactive(mentor);
   }
 
   onLikeMentor(mentor: IMentor){
