@@ -14,6 +14,7 @@ import { ReactiveComponent } from './reactive/reactive.component';
 import { InterComponent } from './interComponent/inter.component';
 import { TypescriptComponent } from './typescript/typescript/typescript.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AppSizerComponent } from './binding-examples/app-sizer/app-sizer.component';
 
 
 const routes: Routes = [ 
@@ -41,7 +42,8 @@ const routes: Routes = [
     InterComponent,
     NonRelatedComponent,
     ReactiveComponent,
-    TypescriptComponent
+    TypescriptComponent,
+    AppSizerComponent
   ],
   imports: [
     BrowserModule,

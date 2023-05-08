@@ -1,14 +1,24 @@
 
-<!-- String Interpolation -->
-<h2 [ngStyle]="{'color': isDisabled ? 'red' : 'green'}"> {{ example }} </h2>
-<br>
-<!-- Event Binding -->
-<!-- Property Binding -->
-<button class="btn btn-primary" 
-        (click)="onClick()" 
-        [disabled]="isDisabled"
-        [ngClass]="{'btn-lg': !isDisabled}"
-        
->Click Me</button>
+<div class="row">
+        <div class="col-6">
+                <!-- String Interpolation -->
+                <h2 [ngStyle]="{'color': isDisabled ? 'red' : 'green'}"> {{ example }} </h2>
+                <br>
+                <!-- Event Binding -->
+                <!-- Property Binding -->
+                <button class="btn btn-primary" 
+                        (click)="onClick()" 
+                        [disabled]="isDisabled"
+                        [ngClass]="{'btn-lg': !isDisabled}"
+                        
+                >Click Me</button>
+        </div>
+        <div class="col-6">
+                <h2>This is Two-Way Binding</h2>
+                <app-sizer [(size)]="fontSizePx"></app-sizer>
+        </div>
+</div>
+
+
 
 

@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class BindingExamplesComponent {
   example: string = 'This is String Interpolation';
   isDisabled: boolean = false;
+  fontSizePx = 16;
 
   onClick(){
     this.example = 'This is Event Binding';
