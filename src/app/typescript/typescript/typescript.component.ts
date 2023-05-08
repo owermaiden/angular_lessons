@@ -14,17 +14,16 @@ export class TypescriptComponent {
   constructor(@Inject(DOCUMENT) private document: Document){}
 
   // Variable types
-  aString : string = 'This is just a string';
-  aNumber : number = 1;
+  public aString : string = 'This is just a string';
+  private aNumber : number = 1;
   aBoolean : boolean = false;
-
-  stringArray : string[] = ['this', 'is', 'an', 'array'];
-  numberArray : number[] = [10 , 20 , 30 ];
-
   obj: any = 100;
   obj2 : any = 'All types available';
 
-  
+  stringArray : string[] = ['this', 'is', 'an', 'array'];
+  numberArray : number[] = [10 , 20 , 30 ];
+  anyArray : any[] = [10, 'string']; // Any means =>  without typescript
+
 
   // functions
   justLikeMethodsInJava(params:any):number {
@@ -43,6 +42,8 @@ export class TypescriptComponent {
     givenString.toLowerCase();
     givenString.split(',');
     givenString.trim();
+    givenString.substring(1,5);
+    givenString.indexOf('a');
 
     let concatination: string = `${this.aString} works in the ${this.aNumber} department.`; 
     concatination.charAt(0);
@@ -54,6 +55,7 @@ export class TypescriptComponent {
   arrayMethods(givenArray: any[]){
 
     givenArray.push(10);
+    givenArray.pop()
     givenArray.length * 2;
     givenArray.forEach(n => n * 2);
     givenArray.findIndex(n => n === 10); // Object equality
