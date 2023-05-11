@@ -16,7 +16,7 @@ export class TypescriptComponent {
   // Variable types
   public aString : string = 'This is just a string';
   private aNumber : number = 1;
-  aBoolean : boolean = false;
+  readonly aBoolean : boolean = false;
   obj: any = 100;
   obj2 : any = 'All types available';
 
