@@ -14,8 +14,16 @@
                 >Click Me</button>
         </div>
         <div class="col-6">
-                <h2>This is Two-Way Binding</h2>
-                <app-sizer [(size)]="fontSizePx"></app-sizer>
+                <!-- <div class="input-group mb-3">
+                <input type="text" class="form-control" [(ngModel)]="inputString">
+                </div>
+                <h2>{{ inputString }}</h2> -->
+
+                <div class="input-group mb-3">
+                  <input #name type="text" class="form-control" [value]="inputString"  >
+                  <button class="btn btn-primary" (click)="onSubmit(name.value)">Submit</button>
+                </div>
+                <h2>{{ inputString }}</h2>
         </div>
 </div>
 

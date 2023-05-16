@@ -122,6 +122,8 @@ export class TypescriptComponent {
         case 10:
             console.log("Result: 10");
             break;
+        default:
+            console.log('default');
     }
   }
 
@@ -135,16 +137,20 @@ export class TypescriptComponent {
 
 // class example
 class Employee {
-  public empCode?: string;
-  empName?: string; // public
+  public id?: number;
+  public name?: string;
 }
 
 let emp = new Employee();
-emp.empCode = '123';
-emp.empName = "Swati";
+emp.id = 123;
+emp.name = "Swati";
 
 // Object from a Class
 let mentor: Mentor = new Mentor('Ower', 1);
 
 // JavaScript Object Notation (JSON)
 let mentor2 : IMentor = { name: 'Ower', likeCount: 1 };
+
+let mentor3: { name: string , surname: string} =  { name: 'Ower', surname: 'maiden' };  // HashMap
+
+let mentor4 : Employee = { id: 123, name: 'Ower' };
